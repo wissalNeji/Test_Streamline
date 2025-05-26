@@ -9,4 +9,12 @@ if uploaded_file:
   df.fillna(df.mean(numeric_only=True), inplace=True) 
   st.subheader("👀 Preview of Uploaded Data")
   st.dataframe(df.head())
-  st.dataframe(df.info())
+  st.subheader("📊 Dataset Info")
+  buffer = io.StringIO()
+  df.info(buf=buffer)
+  s = buffer.getvalue()
+  st.text(s)
+
+    # Display descriptive statistics
+  st.subheader("📈 Summary Statistics")
+  st.dataframe(df.describe())
