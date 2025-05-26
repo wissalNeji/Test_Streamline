@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import io
 
 st.title("AI-Powered Data Cleaner & Summarizer")
 st.write("This app will clean your data and generate a summary.")
